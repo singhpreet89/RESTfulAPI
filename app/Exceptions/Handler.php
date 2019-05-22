@@ -65,7 +65,7 @@ class Handler extends ExceptionHandler
         // When the User does not exist in the database
         if($exception instanceof ModelNotFoundException) {
             $modelName = strtolower(class_basename($exception->getModel()));
-            return $this->errorResponse("The {$modelName} with the specified identificator is not found", 404);
+            return $this->errorResponse("The {$modelName} with the specified identificator does not exist", 404);
         }
 
         // When the user is not authenticated
